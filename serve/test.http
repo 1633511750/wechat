@@ -1,0 +1,39 @@
+@url=http://localhost:3000
+@json=Content-Type: application/json
+
+### 首页
+get {{url}}
+
+### 用户列表
+get {{url}}/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ3NmQ4ZWQwNzA5MTJmZmNlMDMyMjUiLCJ1c2VybmFtZSI6InpzIiwiaWF0IjoxNjI0NzMxNDc1LCJleHAiOjE2MjQ4MTc4NzV9.uUO03QgCe6_LSadEbzJudfNK--54KeR877A-TtUuEY8
+
+### 注册
+post {{url}}/user/register
+{{json}}
+
+{
+  "username": "zs",
+  "password": "123456"
+}
+
+###登录
+post {{url}}/user/login
+{{json}}
+
+{
+  "username":"zs",
+  "password": "123456"
+}
+
+### 验证
+get {{url}}/user/verify
+Authorization: Bearer 60c848f1f7d1d932407310ef.test2
+
+### 个人中心
+get {{url}}/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTA5NWUxZDA1YzAyMGEzMDBkZGJmMyIsImlhdCI6MTYxNTg5NzE3Mn0.-p9sHj5FSUc4bYtIvjpv1wIRmzsz3py0hXgv7uDaY-I
+
+###
+post http://apis.juhe.cn/simpleWeather/query?city=北京&key=kdkjdkjdkdjkldjkjd
+{{json}}
